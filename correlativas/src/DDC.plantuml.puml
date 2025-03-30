@@ -1,0 +1,27 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+class Inscripcion{
+-materias: HashSet<Materia>
+-alumno: Alumno
+-aprobada(): boolean
+}
+
+class Materia{
+-nombre: String
+-correlativas: HashSet<Materia>
+-puedeInscribirse(Alumno alumno): boolean
+}
+
+class Alumno{
+-nombre: String
+-apellido: String
+-materiasAprobadas: HashSet<Materia>
+}
+
+Inscripcion --> "*" Materia
+Inscripcion --* Alumno
+Alumno --> "*" Materia
+Materia ..> Alumno
+
+
+@enduml
