@@ -22,6 +22,7 @@ Inscripcion --> "*" Materia
 Inscripcion --* Alumno
 Alumno --> "*" Materia
 Materia ..> Alumno
+Materia --> "*" Materia
 
 
 @enduml
